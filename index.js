@@ -6,6 +6,9 @@ const fs = require('fs');
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 
+const hostname = '0.0.0.0';
+const port = 8082;
+
 const options = {
   key: fs.readFileSync('./ssl/2461664_app.lixuedan.cn.key'),
   cert: fs.readFileSync('./ssl/2461664_app.lixuedan.cn.pem'),
@@ -51,7 +54,9 @@ app.use('/api', routes)
 //   let port = server.address().port;
 //   console.log(host, port);
 // })
-
-https.createServer(options, app).listen(8082, '172.18.4.45', function () {
+http.createServer(app).listen(port, hostname, function () {
   console.log('Https server listening on port ' + 8082);
 });
+// https.createServer(options, app).listen(8082, '172.18.4.45', function () {
+//   console.log('Https server listening on port ' + 8082);
+// });

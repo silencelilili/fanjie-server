@@ -1,2 +1,2 @@
 # fanjie-server
-凡戒server端
+为后台管理平台和微信小程序提供server服务
